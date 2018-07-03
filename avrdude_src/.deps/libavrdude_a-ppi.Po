@@ -1,0 +1,5 @@
+libavrdude_a-ppi.o: ppi.c /usr/include/stdc-predef.h ac_cfg.h
+
+/usr/include/stdc-predef.h:
+
+ac_cfg.h:

@@ -1,0 +1,5 @@
+libavrdude_la-ppiwin.lo: ppiwin.c /usr/include/stdc-predef.h ac_cfg.h
+
+/usr/include/stdc-predef.h:
+
+ac_cfg.h:
