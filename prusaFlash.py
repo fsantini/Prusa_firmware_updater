@@ -55,14 +55,14 @@ def escapeFilename(filename):
 
 
 print "Flash command:"
-avrdudeCmd = [AVRDUDE, "-C%s" % (escapeFilename(AVRDUDE_CONF),), "-v", "-patmega2560", "-cwiring", "-P%s" % (PORT,), "-b115200", "-D", "-Uflash:w:0:%s:i" % (escapeFilename(FILE),)]
+avrdudeCmd = [AVRDUDE, "-C%s" % (AVRDUDE_CONF,), "-v", "-patmega2560", "-cwiring", "-P%s" % (PORT,), "-b115200", "-D", "-Uflash:w:0:%s:i" % (FILE,)]
 print ' '.join(avrdudeCmd)
 subprocess.check_call(avrdudeCmd)
 
 res = find_languagepack(FILE)
 if res:
     print "Language pack found. Flashing it with:"
-    avrdudeCmd = [AVRDUDE, "-C%s" % (escapeFilename(AVRDUDE_CONF),), "-v", "-patmega2560", "-carduino", "-P%s" % (PORT,), "-b115200", "-D", "-u", "-Uflash:w:%d:%s:i" % (res, escapeFilename(FILE))]
+    avrdudeCmd = [AVRDUDE, "-C%s" % (AVRDUDE_CONF,), "-v", "-patmega2560", "-carduino", "-P%s" % (PORT,), "-b115200", "-D", "-u", "-Uflash:w:%d:%s:i" % (res, FILE)]
     print ' '.join(avrdudeCmd)
     subprocess.check_call(avrdudeCmd)
     
